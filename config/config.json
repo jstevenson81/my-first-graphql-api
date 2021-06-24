@@ -4,23 +4,22 @@
     "password": "gr@phq1",
     "database": "User_GraphQL",
     "host": "localhost",
-    "dialect": "mssql",
-    "port":1433,
+    "dialect": "MSSQL",
+    "port": 1433,
     "logging": false,
     "dialectOptions": {
-      "driver":"SQL Server Native Client 11.0",
-      "instanceName": "MSSQL",
+      "driver": "SQL Server Native Client 11.0",
+      "instanceName": ".",
       "trustedConnection": true,
       "options": {
         "trustedServceCertificate": true,
-        "encrypt":true,
-        "validationBulkLoadParameters":true
+        "encrypt": true,
+        "validationBulkLoadParameters": true
       },
       "ssl": {
         "require": true,
         "rejectUnauthorized": true
       }
-
     }
   },
   "test": {

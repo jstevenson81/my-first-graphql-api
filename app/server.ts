@@ -1,27 +1,18 @@
-import { ApolloServer } from "apollo-server-express";
-import Express from "express";
-import "reflect-metadata";
-import { buildSchema } from "type-graphql";
-import { connect } from "mongoose";
+import 'reflect-metadata';
+import { createConnection } from 'typeorm';
+import { ApolloServer } from 'apollo-server';
+import { UserResolver } from './resolvers/User';
+import { SessionResolver } from './resolvers/Sessions';
+import { buildSchema } from 'type-graphql';
 
-// resolvers
-import {UserResolver} from "./resolvers/User";
-import {SessionResolver} from "./resolvers/Sessions";
-
-
-const main = async () => {
-const schema = await buildSchema({
-    resolvers: [UserResolver, SessionResolver ],
-    emitSchemaFile: true,
-    validate: false,
+async function main() {
+  await createConnection();
+  const schema = await buildSchema({
+    resolvers: [UserResolver, SessionResolver],
   });
-
-const server = new ApolloServer({schema});
-const app = Express();
-server.applyMiddleware({app});
-app.listen({ port: 3333 }, () =>
-  console.log(`🚀 Server ready and listening at ==> http://localhost:3333${server.graphqlPath}`))
+  const server = new ApolloServer({ schema });
+  await server.listen(4000);
+  console.log('Server has started!');
 };
-main().catch((error)=>{
-    console.log(error, 'error');
-})
+
+main();
