@@ -1,1 +1,1 @@
-my-first-graphql-api
+first-graphql-sql-api

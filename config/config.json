@@ -1,0 +1,40 @@
+{
+  "development": {
+    "username": "graphql",
+    "password": "gr@phq1",
+    "database": "User_GraphQL",
+    "host": "localhost",
+    "dialect": "mssql",
+    "port":1433,
+    "logging": false,
+    "dialectOptions": {
+      "driver":"SQL Server Native Client 11.0",
+      "instanceName": "MSSQL",
+      "trustedConnection": true,
+      "options": {
+        "trustedServceCertificate": true,
+        "encrypt":true,
+        "validationBulkLoadParameters":true
+      },
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": true
+      }
+
+    }
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
