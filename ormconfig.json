@@ -1,17 +1,8 @@
 {
-  "type": "mssql",
+  "type": "postgres",
   "host": "localhost",
-  "username": "graphql",
-  "password": "gr@phq1",
-  "database": "User_GraphQL",
-  "synchronize": true,
-  "logging": false,
-  "entities": ["app/models/entity/**/*.ts"],
-  "migrations": ["app/models/migration/**/*.ts"],
-  "subscribers": ["app/models/subscriber/**/*.ts"],
-  "cli": {
-    "entitiesDir": "app/models/entity",
-    "migrationsDir": "app/models/migration",
-    "subscribersDir": "app/models/subscriber"
-  }
+  "username": "postgres",
+  "password": "12141972",
+  "database": "TradeIt",
+  "entities": ["app/models/**/*.ts"]
 }
