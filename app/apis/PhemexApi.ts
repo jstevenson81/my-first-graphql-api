@@ -9,7 +9,6 @@ import { PhemexPositionResponse } from '../models/PhemexPositionResponse';
 export class PhemexApi {
   getSignature(action: string, timeout: number): string {
     let hmacMessage = `${action.replace('?', '')}${timeout}`;
-    console.log(hmacMessage);
     return CryptoJS.HmacSHA256(hmacMessage, API_CONSTANTS.clientSecret).toString();
   }
 
@@ -57,7 +56,6 @@ export class PhemexApi {
     };
 
     var response = await axios(reqOpts);
-    console.log(response.data);
     return response.data;
   }
 }
