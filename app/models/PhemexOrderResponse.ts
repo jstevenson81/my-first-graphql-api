@@ -7,6 +7,6 @@ export class PhemexOrderResponse {
   code: number;
   @Field()
   msg: string;
-  @Field((type) => PhemexOrderCollection)
+  @Field(() => PhemexOrderCollection)
   data: PhemexOrderCollection;
 }

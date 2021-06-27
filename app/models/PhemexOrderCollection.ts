@@ -5,6 +5,6 @@ import { PhemexOrderRow } from './PhemexOrderRow';
 export class PhemexOrderCollection {
   @Field()
   total: number;
-  @Field((type) => [PhemexOrderRow])
+  @Field(() => [PhemexOrderRow])
   rows: PhemexOrderRow[];
 }
